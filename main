@@ -1,0 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:whatsapp/firstpage.dart';
+import 'package:whatsapp/second.dart';
+import 'package:whatsapp/third.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    routes: {
+      '/': (context)=> const ThirdPage(),
+      '/second':(context) => const SecondPage(),
+    },
+  ));
+}
