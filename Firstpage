@@ -1,0 +1,85 @@
+import 'package:flutter/material.dart';
+
+class FirstPage extends StatefulWidget {
+  const FirstPage({Key? key}) : super(key: key);
+
+  @override
+  State<FirstPage> createState() => _FirstPageState();
+}
+
+class _FirstPageState extends State<FirstPage> {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.black,
+        body: Column(
+          children: [
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 50),
+                child: Image(
+                  image: AssetImage("assets/image/1.png"),
+                  height: 200,
+                  width: 200,
+                ),
+              ),
+            ),
+            const Text(
+              "Welcome To Whatsapp",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            Container(
+              height: 50,
+              width: 250,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+              ),
+              child: Row(
+                children: const [
+                  Icon(Icons.expand_more),
+                  Text("91 -"),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/second');
+              },
+              child: Container(
+                height: 50,
+                width: 150,
+                decoration: const BoxDecoration(
+                  color: Color(0xff347c2c),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                ),
+                child: Row(
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(left: 30),
+                      child: Text(
+                        "Send OTP",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
